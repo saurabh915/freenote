@@ -7,9 +7,9 @@ const mongoURI ='mongodb+srv://saurabh99:patil99@cluster0.hjvio.mongodb.net/inot
 
 
 const connectToMongo = ()=>{
-    mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true,useFindAndModify:false }, ()=>{
-        console.log("Connected to Mongo Successfully");
-    })
+    mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true,useFindAndModify:false }).then(()=>{
+        console.log("connection successful");
+    }).catch((err)=> console.log('no connection'));
 }
 
 module.exports = connectToMongo;
