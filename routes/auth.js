@@ -44,8 +44,14 @@ router.post('/createuser', [
         id: user.id
       }
     }
-    const authtoken = jwt.sign(data, process.env.SECRET);
-    
+    try{
+
+      const authtoken = jwt.sign(data, process.env.SECRET);
+    }
+    catch (error) {
+      console.error(error.message);
+      res.status(500).send("Internal Server Error jwt");
+    }
     // res.json(user)
     res.json({success, authtoken })
     res.status(200).send("everything is good");
