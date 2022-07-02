@@ -34,6 +34,7 @@ const getNotes = async () => {
     method: 'GET',
     headers: {
       "Content-Type": "application/json",
+      'Accept': 'application/json',
       "auth-token": localStorage.getItem('token')
     }
   });
@@ -66,6 +67,7 @@ setNotes(json);
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
+        'Accept': 'application/json',
         "auth-token": localStorage.getItem('token')
       },
       //for converting json into string
@@ -95,6 +97,7 @@ setNotes(json);
       method: 'DELETE',
       headers: {
         "Content-Type": "application/json",
+        'Accept': 'application/json',
         "auth-token": localStorage.getItem('token')
       },
     
@@ -120,6 +123,7 @@ console.log(json);
       method: 'PATCH',
       headers: {
         "Content-Type": "application/json",
+        'Accept': 'application/json',
         "auth-token": localStorage.getItem('token')
       },
       body: JSON.stringify({title, description, tag})
