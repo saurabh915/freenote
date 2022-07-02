@@ -12,7 +12,7 @@ const Login = (props) => {
      
   
             // TODO: API Call which is created in backend 
-            const response = await fetch("/api/auth/login", {
+            const response = await fetch("/routes/auth/login", {
               method: 'POST',
               headers: {
                 "Content-Type": "application/json",

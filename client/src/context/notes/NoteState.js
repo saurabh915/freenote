@@ -30,7 +30,7 @@ const NoteState = (props) => {
 
 const getNotes = async () => {
   // TODO: API Call
-  const response = await fetch("/api/notes/fetchallnotes", {
+  const response = await fetch("/routes/notes/fetchallnotes", {
     method: 'GET',
     headers: {
       "Content-Type": "application/json",
@@ -62,7 +62,7 @@ setNotes(json);
 
   const addNote = async (title, description, tag) => {
     // TODO: API Call
-    const response = await fetch("/api/notes/addnote", {
+    const response = await fetch("/routes/notes/addnote", {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
@@ -91,7 +91,7 @@ setNotes(json);
   const deleteNote = async (id) => {
 
     //for api call
-    const response = await fetch(`/api/notes/deletenote/${id}`, {
+    const response = await fetch(`/routes/notes/deletenote/${id}`, {
       method: 'DELETE',
       headers: {
         "Content-Type": "application/json",
@@ -116,7 +116,7 @@ console.log(json);
   //Edit a Note
   const editNote = async (id, title, description, tag) => {
     //For API call
-    const response = await fetch(`/api/notes/updatenote/${id}`, {
+    const response = await fetch(`/routes/notes/updatenote/${id}`, {
       method: 'PATCH',
       headers: {
         "Content-Type": "application/json",
