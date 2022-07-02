@@ -5,7 +5,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react'
 import {useNavigate} from 'react-router-dom';
 
 import noteContext from "../context/notes/noteContext";
-import AddNote from './AddNote'
+import AddNote from './AddNote';
 
 import NoteItem from './Noteitem';
 const Notes = (props) => {
