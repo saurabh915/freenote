@@ -1,19 +1,17 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-const dotenv = require('dotenv');
 const Signup = (props) => {
   let navigate = useNavigate();
   const [credentials, setCredentials] = useState({ name:"" ,email: "", password: "",cpassword:""})
  const handleSubmit=async (e)=>{
 
-  dotenv.config({path:'../../config.env'});
      //to stop reloading
      
      e.preventDefault();
      //destructuring means assigning  array or objects elements to particular variables 
 const {name,email,password}= credentials;
          // TODO: API Call
-         const response = await fetch(`http://localhost:${this.process.PORT}/api/auth/createuser`, {
+         const response = await fetch("/createuser", {
            method: 'POST',
            headers: {
              "Content-Type": "application/json",
