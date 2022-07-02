@@ -8,7 +8,7 @@ const path = require('path');
 var jwt = require('jsonwebtoken');
 var fetchuser = require('../middleware/fetchuser');
 require('dotenv').config({path: path.resolve(__dirname,'../config.env')});
-const JWT_SECRET = process.env.SECRET;
+
 
 // ROUTE 1: Create a User using: POST "/api/auth/createuser". No login required
 router.post('/createuser', [
@@ -42,7 +42,7 @@ router.post('/createuser', [
         id: user.id
       }
     }
-    const authtoken = jwt.sign(data, JWT_SECRET);
+    const authtoken = jwt.sign(data, process.env.SECRET);
 
 
     // res.json(user)
@@ -86,7 +86,7 @@ router.post('/login', [
         id: user.id
       }
     }
-    const authtoken = jwt.sign(data, JWT_SECRET);
+    const authtoken = jwt.sign(data, process.env.SECRET);
     success = true;
     res.json({ success, authtoken })
 
