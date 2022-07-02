@@ -45,10 +45,10 @@ router.post('/createuser', [
       }
     }
     const authtoken = jwt.sign(data, process.env.SECRET);
-
-
+    
     // res.json(user)
     res.json({success, authtoken })
+    res.status(200).send("everything is good");
 
   } catch (error) {
     console.error(error.message);
