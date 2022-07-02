@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-const dotenv = require('dotenv');
+
 
 const Login = (props) => {
     let navigate = useNavigate();
@@ -9,7 +9,7 @@ const Login = (props) => {
         //to stop reloading
         
         e.preventDefault();
-        dotenv.config({path:'../../config.env'});
+     
   
             // TODO: API Call which is created in backend 
             const response = await fetch("/api/auth/login", {
