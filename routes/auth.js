@@ -8,8 +8,8 @@ const path = require('path');
 var jwt = require('jsonwebtoken');
 var fetchuser = require('../middleware/fetchuser');
  require('dotenv').config({path: path.resolve(__dirname,'../config.env')});
-const JWT_SECRET = process.env.SECRET;
-
+// const JWT_SECRET = process.env.SECRET;
+const JWT_SECRET = "Harryisagoodb$oy";
 // ROUTE 1: Create a User using: POST "/api/auth/createuser". No login required
 router.post('/createuser', [
   body('name', 'Enter a valid name').isLength({ min: 3 }),
@@ -24,7 +24,7 @@ router.post('/createuser', [
   try {
     // Check whether the user with this email exists already
     let user = await User.findOne({ email: req.body.email });
-    if (user) {
+    if (!user) {
       return res.status(400).json({ error: "Sorry a user with this email already exists" })
     }
     const salt = await bcrypt.genSalt(10);
