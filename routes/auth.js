@@ -7,8 +7,8 @@ const bcrypt = require('bcryptjs');
 const path = require('path');
 var jwt = require('jsonwebtoken');
 var fetchuser = require('../middleware/fetchuser');
-require('dotenv').config({path: path.resolve(__dirname,'../config.env')});
-const JWT_SECRET =process.env.SECRET;
+ require('dotenv').config({path: path.resolve(__dirname,'../config.env')});
+const JWT_SECRET = process.env.SECRET;
 
 // ROUTE 1: Create a User using: POST "/api/auth/createuser". No login required
 router.post('/createuser', [
@@ -41,7 +41,7 @@ router.post('/createuser', [
         id: user.id
       }
     }
-    const authtoken = jwt.sign(data, process.env.SECRET);
+    const authtoken = jwt.sign(data, JWT_SECRET);
 
 
     // res.json(user)
@@ -49,7 +49,7 @@ router.post('/createuser', [
 
   } catch (error) {
     console.error(error.message);
-    res.status(500).send("Internal Server Error");
+    res.status(500).send("Internal Server Error createuser");
   }
 })
 
