@@ -7,7 +7,7 @@ const AddNote = (props) => {
   //this is used to store new note values like title and description
   const [note,setNote] = useState({title:"",description:"",tag:""})
  
-  const onChange =(e)=>{//here ...note means whatever the state value of note is should be remain as it is but as soon as some change occurs in given input fields run this function the input whose input value is changing access it from name  and add their values to note state 
+   const onChange =(e)=>{//here ...note means whatever the state value of note is should be remain as it is but as soon as some change occurs in given input fields run this function the input whose input value is changing access it from name  and add their values to note state 
     setNote(
 
     {...note,[e.target.name]:e.target.value}

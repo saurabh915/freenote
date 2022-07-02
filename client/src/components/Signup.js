@@ -11,7 +11,7 @@ const Signup = (props) => {
      //destructuring means assigning  array or objects elements to particular variables 
 const {name,email,password}= credentials;
          // TODO: API Call
-         const response = await fetch("/createuser", {
+         const response = await fetch("/api/auth/createuser", {
            method: 'POST',
            headers: {
              "Content-Type": "application/json",
